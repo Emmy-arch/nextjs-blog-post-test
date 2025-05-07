@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
 import {
@@ -5,12 +7,12 @@ import {
   LoginLink,
   LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
-export async function Navbar() {
+export function Navbar() {
   // Get client data session
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
+  const { getUser } = useKindeBrowserClient();
+  const user = getUser();
 
   // console.log(user);
 
