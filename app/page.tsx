@@ -1,9 +1,7 @@
 // import { Prisma } from "@prisma/client";
-import Link from "next/link";
 import { prisma } from "./utils/db";
 import { BlogPostCard } from "@/components/general/BlogpstCard";
 import { Suspense } from "react";
-import LoadingDashboard from "./dashboard/loaading";
 import { Skeleton } from "@/components/ui/skeleton";
 
 async function getData() {
