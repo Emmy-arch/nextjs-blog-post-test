@@ -4,6 +4,8 @@ import { BlogPostCard } from "@/components/general/BlogpstCard";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 async function getData() {
   // Create a settimeout of 9sec
   // await new Promise((resolve) => setTimeout(resolve, 9000));
