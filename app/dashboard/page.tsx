@@ -3,8 +3,6 @@ import Link from "next/link";
 import { prisma } from "../utils/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { BlogPostCard } from "@/components/general/BlogpstCard";
-import { BlogPost } from "@prisma/client";
-// import { BlogPost } from "@prisma/client";
 
 async function getBlogPosts(userId: string) {
   // await new Promise((resolve) => setTimeout(resolve, 9000));
@@ -38,7 +36,7 @@ export default async function DashboardRoute() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {data.map((item: BlogPost) => (
+        {data.map((item) => (
           <BlogPostCard data={item} key={item.id} />
         ))}
       </div>
